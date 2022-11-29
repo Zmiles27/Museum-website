@@ -1,2 +1,2 @@
 # Museum-website
-project van Gerben en Li-Hong
+project van Gerben, Li Hong en Alex-Jessica
