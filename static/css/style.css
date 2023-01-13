@@ -55,7 +55,7 @@
     height:10vw;
     width:77vw;
     background:#D3D3D3;
-    font-size: 6vw;
+    font-size: 5vw;
     justify-content:center;
     align-items:center;
 }
@@ -65,7 +65,7 @@
     flex-direction: column;
     width:17vw;
     height:50vw;
-    font-size:1vw;
+    font-size:2vw;
     justify-content:top;
     align-items:top;
     background:#D3D3D3;
@@ -85,6 +85,14 @@
     padding-right: 1vw;
 }
 
+.textbox3{
+    color:#000000;
+    font-size:50%;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
 .textfont1{
     font-size:50%;
     color:#FFFFFF;
@@ -97,7 +105,7 @@
 .textfont2{
     font-size:50%;
     color:#000000;
-    height:35vw;
+    height:15vw;
     padding-left:1vw;
     padding-right:1vw;
     margin-top:1vw;
@@ -170,6 +178,25 @@
     font-size: 2vw;
     justify-content: center;
     align-items: top;
+}
+
+.twitterButton{
+    width:8vw;
+    height:8vw;
+}
+
+.youtubeButton{
+    width:8vw;
+    height:8vw;
+}
+
+.facebookButton{
+    width:8vw;
+    height:8vw;
+}
+.instagramButton{
+    width:8vw;
+    height:8vw;
 }
 
 .contentbox3{
