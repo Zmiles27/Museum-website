@@ -180,6 +180,19 @@
     align-items: top;
 }
 
+.contentbox3{
+    display:flex;
+    flex-direction: column;
+    width:50vw;
+    height:48vw;
+    margin:1vw;
+    background-color:rgba(0, 0, 0, 0.8);
+    border-radius: 1vw;
+    font-size: 2vw;
+    justify-content: center;
+    align-items: top;
+}
+
 .twitterButton{
     width:8vw;
     height:8vw;
@@ -230,11 +243,11 @@
 }
 #gameContainer{
     text-align: center;
-    color: green;
+    color: #242444;
 }
 #gameBoard{
     border:3px solid;
-    color: green;
+    color: #242444;
 }
 #scoreText{
     font-family: "consolas", monospace;
@@ -259,5 +272,5 @@
     border: 4px solid;
     border-radius: 15px;
     cursor: pointer;
-    color: green;
+    color: #242444;
 }
