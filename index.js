@@ -15,6 +15,7 @@ const ballRadius = 12.5;
 const paddleSpeed = 50;
 let intervalID;
 let ballSpeed;
+let EndScore = 5;
 let ballX = gameWidth / 2;
 let ballY = gameHeight / 2;
 let ballXDirection = 0;
@@ -34,14 +35,14 @@ let paddle2 = {
     y: gameHeight - 100
 };
 window.addEventListener("keydown", changeDirection);
-resetBtn.addEventListener("click", resetGame);
-startBtn.addEventListener("click", gameStart);
+startBtn.addEventListener("click", gameStart)
 
-createBall();
+createBall()
 render();
 
 function gameStart(){
-    
+
+    console.log("Game Start Button")
     nextTick();
     startBtn.style.display = "none";
 };
@@ -52,7 +53,6 @@ function nextTick(){
         moveBall();
         checkCollision();
         render();
-
         nextTick();
     }, 10)
 };
@@ -79,6 +79,26 @@ function drawPaddles(){
     ctx.strokeRect(paddle2.x, paddle2.y, paddle2.width, paddle2.height);
 };
 function createBall(){
+    console.log("Create Ball")
+    ballSpeed = 1;
+    if(Math.round(Math.random()) == 1){
+        ballXDirection =  1; 
+    }
+    else{
+        ballXDirection = -1; 
+    }
+    if(Math.round(Math.random()) == 1){
+        ballYDirection = Math.random() * 1;
+    }
+    else{
+        ballYDirection = Math.random() * -1; 
+    }
+    ballX = gameWidth / 2;
+    ballY = gameHeight / 2;
+    
+};
+function createBallNoMovement(){
+    console.log("Create Ball No Movement")
     ballSpeed = 1;
     if(Math.round(Math.random()) == 1){
         ballXDirection =  1; 
@@ -142,8 +162,14 @@ function checkCollision(){
             ballSpeed += 1;
         }
     }
-    if(player1Score ==5|| player2Score == 5){
-        resetGame()
+    if(player1Score == EndScore || player2Score == EndScore){
+        var txt;
+        if (confirm("Bla")) {
+            txt = "You pressed OK!";
+            resetGameNoMovement()
+         } else {
+            txt = "You pressed Cancel!";
+        };
     }
 };
 function changeDirection(event){
@@ -180,6 +206,7 @@ function updateScore(){
     scoreText.textContent = `${player1Score} : ${player2Score}`;
 };
 function resetGame(){
+    console.log("Reset Game")
     player1Score = 0;
     player2Score = 0;
     paddle1 = {
@@ -200,6 +227,32 @@ function resetGame(){
     ballXDirection = 0;
     ballYDirection = 0;
     createBall();
+    updateScore();
+    clearInterval(intervalID);
+    startBtn.style.display = "inline";
+};
+function resetGameNoMovement(){
+    console.log("Reset Game No movement ")
+    player1Score = 0;
+    player2Score = 0;
+    paddle1 = {
+        width: 25,
+        height: 100,
+        x: 0,
+        y: 0
+    };
+    paddle2 = {
+        width: 25,
+        height: 100,
+        x: gameWidth - 25,
+        y: gameHeight - 100
+    };
+    ballSpeed = 0;
+    ballX = 0;
+    ballY = 0;
+    ballXDirection = 0;
+    ballYDirection = 0;
+    createBallNoMovement();
     updateScore();
     clearInterval(intervalID);
     startBtn.style.display = "inline";
